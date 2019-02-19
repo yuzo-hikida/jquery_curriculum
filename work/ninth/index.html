@@ -15,12 +15,9 @@
     </div>
     <script src="../../common/js/jquery.js"></script>
     <script>
-      // 今回のカリキュラムではAjax（XMLHttpRequest）というJavaScriptの特殊な機能を使います。
-      // この機能はブラウザのセキュリティ機能によってはサーバーを立てないとうまく動作しない可能性があるので、サーバーを立てる必要があります。
-      // ターミナルで`jquery-curriculum`に移動したあとに`open -a '/Applications/Google Chrome.app' http://localhost:8000/work/ninth/ && python -m SimpleHTTPServer 8000`を叩くとサーバを立てることができます。またブラウザも勝手に立ち上がります。サーバーを止める方法はターミナルでcontrol + cを打つと止まります。
-      //
       // [使うメソッド]
-      // .html() 要素の中に引数を代入する。
+      // $.each(配列, function functionName() {}) 配列に対しての繰り返し処理
+      // .html() 要素の中に引数を代入する。（まずは.append() でやってみましょう）
       // $.ajax({}) 外部ファイルやURLに対してデータをリクエストすることができます。これだけだと少しわからないと思うので下に文法を書いておきます。
       //
       // [文法]
@@ -44,7 +41,7 @@
       //   <p class="colorList__title" style="background-color: ;"></p>
       // </li>
       //
-      // このテンプレートに取得してきたオブジェクトを流し込みます。
+      // このテンプレートに取得してきた中身を入れて表示します。
     </script>
   </body>
 </html>

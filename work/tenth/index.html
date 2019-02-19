@@ -29,27 +29,14 @@
       // 楽天ブックスの総合検索APIを使って製作してください。
       // answerの挙動を良く見てね！
       //
+      // 下記URLにAPIの仕様が載ってるいので、ブラウザで開いて参考にしてください。
       // https://webservice.rakuten.co.jp/api/bookstotalsearch/
       //
-      // $.ajax と $.each を調べてみてください
+      //
+      // [使うメソッド]
+      // $.each(配列, function functionName() {}) 配列に対しての繰り返し処理
+      // $.ajax({}) 外部ファイルやURLに対してデータをリクエストすることができます。
       // 以下は今回使う$.ajaxの基本的な形です。
-      //
-      // $.ajaxによってデータが取得できたら、必要なデータ(作品名とか作者名とか)を取得します。
-      // 取得できたらDOM上に<ul class='lists'></ul>を用意しているので、その中に下のテンプレに沿ってデータを入れ込みましょう。
-      // <li class='lists__item'>
-      //  <div class='lists__item__inner'>
-      //    <a href='' class='lists__item__link' target='_blank'>
-      //      <img src='' class='lists__item__img' alt=''>
-      //      <p class='lists__item__detail'>作品名：</p>
-      //      <p class='lists__item__detail'>作者　：</p>
-      //      <p class='lists__item__detail'>出版社：</p>
-      //    </a>
-      //  </div>
-      // </li>
-      //
-      // オブジェクトで取得したデータへのアクセス方法 以下参考程度に
-      // http://qiita.com/marumaru8228/items/65fc684383b096f0e548
-      //
       //
       // $.ajax({
       //   url: 'https://app.rakuten.co.jp/services/api/BooksTotal/Search/20130522',
@@ -62,7 +49,24 @@
       //   },
       // }).done(function(data) {
       //   // この中にデータ取得後の動きを記述していきます。
+      //   console.log(data);
       // });
+      //
+      //
+      // $.ajaxによってデータが取得できたら、必要なデータ(作品名とか作者名とか)を取得します。
+      // 取得できたらHTMLに<ul class='lists'></ul>を用意しているので、その中に下のテンプレに沿ってデータを入れ込みましょう。
+      // <li class='lists__item'>
+      //  <div class='lists__item__inner'>
+      //    <a href='' class='lists__item__link' target='_blank'>
+      //      <img src='' class='lists__item__img' alt=''>
+      //      <p class='lists__item__detail'>作品名：</p>
+      //      <p class='lists__item__detail'>作者　：</p>
+      //      <p class='lists__item__detail'>出版社：</p>
+      //    </a>
+      //  </div>
+      // </li>
+      //
+      //
       //
     </script>
   </body>

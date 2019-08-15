@@ -57,10 +57,18 @@
       // .children() 要素の子要素を取得します。
       // .stop() 現在動作中のアニメーション処理を全て中止します。
       $(function(){
-        $('.menu__list > li').hover(function() {
+        $('.menu__list li').hover(function() {
           $(this).children('ul').stop().slideDown(500);
+          //$(this)はhoverされた要素をさしてくれるので、hoverされた要素の直下の子要素を取得してくれるchildrenメソッドを使い
+          //引数に表示したいulを入れてあげます。
+          //その要素に対して.slideDown()をつけて,hoverされた時にslideDownするようにします。
         }, function() {
           $(this).children('ul').stop().slideUp(500);
+          //hoverの第2引数にhoverから外れた時の実行を書けばいいので、上の関数の.slideDown()のところを
+          //.slideUp()に変えてあげます
+          //ただ、このままだと高速で<p>タグ感をhoverして、外してを繰り返すとその回数分hoverを外した後も動いてしまうので
+          //それぞれに.stop()メソッドを使い新たなアニメーションが実行されたら現在実行しているアニメーションを直ちに終了させる
+          //ので、<p>タグ間を高速で行き来してもhoverされた分だけ動作しなくなる。
         });
 
       });

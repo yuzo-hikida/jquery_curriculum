@@ -100,15 +100,25 @@
       $(function() {
 
         $('select').change(function() {
+          //changeメソッドを使うことでselectの要素の中身が変更された時に中のイベントを実行させます。
           var val = $('select').val();
+          //valueを変数化します。
           if(val=="all") {
+            //if文を使ってまず最初にvalがallの時とそうじゃない時で表示を分けます。
+            //allの時は全て表示させたいのでifの引数の中にvalとallがイコールだったらとし
+            //listの中のliを表示させます
             $('.list li').show();//()に.list liとlistも書かないとどこのliかわからなくなる
           } else {
+            //else以降にvalがall以外だったらで定義します
             $('.list li').each(function() {　//()に.list liとlistも書かないとどこのliかわからなくなる
+              //eachメソッドを使うことにより引数の中にある関数をループさせます。
               var data = $(this).data('category-type'); //DOM要素をthisにしないと正しく変数代入されない
+              //dataの中に選択された.list li要素のdata属性を変数代入してあげます。
               if(val==data){
+                //選択されたdataとvalが一致した時に、一致した.list li要素を表示させる。
               $(this).show();//DOM要素をthisにしないと正しく処理されない
               }else{
+                //一致しなかったら非表示にするを１つずつループで実行していけばall以外で選択されたvalと一致するdataを表示できる
               $(this).hide();//DOM要素をthisにしないと正しく処理されない
               }
             });
